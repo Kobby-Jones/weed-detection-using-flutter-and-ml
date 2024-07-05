@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 // A button to be called with custom text based on the function
 class Buttons extends StatelessWidget {
   final String? buttonText;
-  const Buttons({super.key, this.buttonText});
+  final VoidCallback onPressed;
+
+  const Buttons({super.key, required this.buttonText, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: const ButtonStyle(
           backgroundColor: MaterialStatePropertyAll(Color(0xFF187F5A))),
       child: Text(
@@ -19,14 +21,23 @@ class Buttons extends StatelessWidget {
     );
   }
 }
+
 // The skip button to be called on all the required pages
 class SkipButton extends StatelessWidget {
-  const SkipButton({super.key});
+  final VoidCallback onPressed;
+  const SkipButton({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: (){}, child: const Text("Skip", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 32, 79, 222)),
-              ),
-              );
+    return TextButton(
+      onPressed: onPressed,
+      child: const Text(
+        "Skip",
+        style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 32, 79, 222)),
+      ),
+    );
   }
 }

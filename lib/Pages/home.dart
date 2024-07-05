@@ -69,12 +69,16 @@ class HomePage extends StatelessWidget {
                 ElevatedButton(onPressed: (){}, style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color(0xFF187F5A))), child: const Text("Manage",  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0, color: Colors.white),)),
               ],),
               const SizedBox(height: 20.0,),
-               const Padding(
-                 padding: EdgeInsets.symmetric(horizontal: 20.0),
+                Padding(
+                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                  child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                   CircleAvatar(backgroundColor: Colors.black,child: Icon(Icons.question_mark_rounded, color: Colors.white,),)
+                   InkWell(child: const CircleAvatar(backgroundColor: Colors.black,child: Icon(Icons.question_mark_rounded, color: Colors.white,),),
+                   onTap: ()=>{
+                    Navigator.pushNamed(context, '/help')
+                   },
+                   )
                                ],),
                )
             ],
