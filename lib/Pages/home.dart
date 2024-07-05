@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 // Entry point of the Flutter application
 
 // StatelessWidget representing the home page of the app
@@ -8,10 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // Disable the debug banner
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           // Row widget to arrange the children horizontally
           title: const Row(
@@ -74,7 +70,8 @@ class HomePage extends StatelessWidget {
                  child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                   InkWell(child: const CircleAvatar(backgroundColor: Colors.black,child: Icon(Icons.question_mark_rounded, color: Colors.white,),),
+                    // An Inkwell widget to make the help CircleAvatar clickable
+                   GestureDetector(child: const CircleAvatar(backgroundColor: Colors.black,child: Icon(Icons.question_mark_rounded, color: Colors.white,),),
                    onTap: ()=>{
                     Navigator.pushNamed(context, '/help')
                    },
@@ -85,7 +82,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         
-      ),
-    );
+      );
+   
   }
 }
