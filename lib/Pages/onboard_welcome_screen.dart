@@ -20,7 +20,7 @@ class WelcomePage extends StatelessWidget {
               height: 120.0,
             ),
             // The camea Icon
-            const Icon(Icons.camera_alt),
+            const Icon(Icons.camera_alt, color: Color(0xFF187F5A),),
             // The Welcome text
             const Text(
               "Welcome to",

@@ -6,6 +6,6 @@ class TipsMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("$message", style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold), textAlign: TextAlign.center,);
+    return Text("$message", style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.w900), textAlign: TextAlign.center,);
   }
 }
