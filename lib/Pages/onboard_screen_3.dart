@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:weed_detection_app/Pages/buttons.dart';
 import 'package:weed_detection_app/Pages/tips.dart';
+
+
 class GetWeedDetails extends StatelessWidget {
   const GetWeedDetails({super.key});
 
@@ -32,7 +34,8 @@ class GetWeedDetails extends StatelessWidget {
                     ),
                   ],
                   ),
-                  SkipButton(onPressed: ()=> Navigator.pushNamed(context, '/'))
+                  SkipButton(onPressed: ()=> Navigator.pushNamed(context, '/')
+                  ),
               ],
               ),
           ),

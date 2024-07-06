@@ -10,17 +10,17 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           // Row widget to arrange the children horizontally
-          title: const Row(
+          title: Row(
             // Space out the children
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               // Title text
-              Text("Home"),
+              const Text("Home"),
               // Search icon
-              Icon(Icons.search, color: Color(0xFF187F5A)),
-              Icon(Icons.settings, color: Color(0xFF187F5A)),
+              IconButton(onPressed: (){}, icon: const Icon(Icons.search),color: const Color(0xFF187F5A)),
+              IconButton(onPressed: (){}, icon: const Icon(Icons.settings),color: const Color(0xFF187F5A)),
               // CircleAvatar widget for displaying the avatar
-              CircleAvatar(
+              const CircleAvatar(
                 // Radius of the avatar
                 radius: 8.0,
                 // Avatar image
