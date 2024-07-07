@@ -3,6 +3,7 @@ import 'package:weed_detection_app/Pages/home.dart';
 import 'package:weed_detection_app/Pages/onboard_screen_2.dart';
 import 'package:weed_detection_app/Pages/onboard_screen_3.dart';
 import 'package:weed_detection_app/Pages/onboard_welcome_screen.dart';
+// import 'package:weed_detection_app/Pages/search_test.dart';
 
 void main() {
   runApp(const WeedDetect());
