@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         // Row widget to arrange the children horizontally
-        title: Row(
+        title: isSearching? const SearchBar(): Row(
           // Space out the children
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -24,9 +24,16 @@ class _HomePageState extends State<HomePage> {
             const Text("Home"),
             // Search icon
             // If the user clicks on the search icon, it should display a search bar for the user to search for what he or she want. The search icon is first displayed, disappear after it is being clicked and then shows the search bar
-                isSearching? const SearchBar(): IconButton(onPressed: (){setState(() {
+                 
+                IconButton(
+                  onPressed: (){
+                    setState(
+                      () {
                   isSearching = !isSearching;
-                });}, icon: const Icon(Icons.search),color: const Color(0xFF187F5A)),
+                });
+                }, 
+                icon: const Icon(Icons.search),color: const Color(0xFF187F5A)
+                ),
             IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.settings),
@@ -45,113 +52,115 @@ class _HomePageState extends State<HomePage> {
       // Position all the components in the center of the page
       body: Center(
         // Arrange the components in a column order
-        child: Column(
-          children: <Widget>[
-            // Givesome space between the appbar and the logo
-            const SizedBox(
-              height: 70.0,
-            ),
-            // The App Log
-            const Image(
-              image: AssetImage("images/weedradar-logo.png"),
-              width: 160.0,
-              height: 160.0,
-            ),
-            // The home Title
-            const Text("WEEDRADAR",
-                style: TextStyle(
-                  fontSize: 48.0,
-                  fontWeight: FontWeight.bold,
-                )),
-            // A card to give a brief info about the app
-            const Card(
-              child: Padding(
-                padding: EdgeInsets.only(
-                    right: 50.0, left: 10.0, top: 20, bottom: 20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              // Givesome space between the appbar and the logo
+              const SizedBox(
+                height: 70.0,
+              ),
+              // The App Log
+              const Image(
+                image: AssetImage("images/weedradar-logo.png"),
+                width: 160.0,
+                height: 160.0,
+              ),
+              // The home Title
+              const Text("WEEDRADAR",
+                  style: TextStyle(
+                    fontSize: 48.0,
+                    fontWeight: FontWeight.bold,
+                  )),
+              // A card to give a brief info about the app
+              const Card(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      right: 50.0, left: 10.0, top: 20, bottom: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "Real-Time Weed Detect",
+                        style: TextStyle(
+                            fontSize: 24.0, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Track and Manage Weed",
+                        style: TextStyle(
+                            fontSize: 15.0, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Icon(
+                        Icons.camera_alt_outlined,
+                        color: Colors.black,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  // Detect Button
+                  ElevatedButton(
+                      onPressed: () {},
+                      style: const ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll(Color(0xFF187F5A))),
+                      child: const Text(
+                        "Detect",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24.0,
+                            color: Colors.white),
+                      )),
+                  const SizedBox(
+                    width: 40.0,
+                  ),
+                  // Manage Button
+                  ElevatedButton(
+                      onPressed: () {},
+                      style: const ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll(Color(0xFF187F5A))),
+                      child: const Text(
+                        "Manage",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24.0,
+                            color: Colors.white),
+                      )),
+                ],
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    Text(
-                      "Real-Time Weed Detect",
-                      style: TextStyle(
-                          fontSize: 24.0, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "Track and Manage Weed",
-                      style: TextStyle(
-                          fontSize: 15.0, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    Icon(
-                      Icons.camera_alt_outlined,
-                      color: Colors.black,
+                    // An Inkwell widget to make the help CircleAvatar clickable
+                    GestureDetector(
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.black,
+                        child: Icon(
+                          Icons.question_mark_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                      onTap: () => {Navigator.pushNamed(context, '/help')},
                     )
                   ],
                 ),
-              ),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                // Detect Button
-                ElevatedButton(
-                    onPressed: () {},
-                    style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(Color(0xFF187F5A))),
-                    child: const Text(
-                      "Detect",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24.0,
-                          color: Colors.white),
-                    )),
-                const SizedBox(
-                  width: 40.0,
-                ),
-                // Manage Button
-                ElevatedButton(
-                    onPressed: () {},
-                    style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(Color(0xFF187F5A))),
-                    child: const Text(
-                      "Manage",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24.0,
-                          color: Colors.white),
-                    )),
-              ],
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  // An Inkwell widget to make the help CircleAvatar clickable
-                  GestureDetector(
-                    child: const CircleAvatar(
-                      backgroundColor: Colors.black,
-                      child: Icon(
-                        Icons.question_mark_rounded,
-                        color: Colors.white,
-                      ),
-                    ),
-                    onTap: () => {Navigator.pushNamed(context, '/help')},
-                  )
-                ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
