@@ -5,7 +5,6 @@ import 'package:weed_detection_app/Pages/tips.dart';
 
 class GetWeedDetails extends StatelessWidget {
   const GetWeedDetails({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,7 +29,7 @@ class GetWeedDetails extends StatelessWidget {
                     Buttons(buttonText: 'Prev', onPressed: ()=> Navigator.of(context).pop()
                     ),
                     const SizedBox(width: 40.0,),
-                    Buttons(buttonText: 'Next', onPressed: ()=> Navigator.pushNamed(context, '/')
+                    Buttons(buttonText: 'Next', onPressed: ()=> Navigator.pushNamed(context, '/onboard_screen_4')
                     ),
                   ],
                   ),
@@ -38,7 +37,7 @@ class GetWeedDetails extends StatelessWidget {
                   ),
               ],
               ),
-          ),
+                        ),
             ),
             ),
     );

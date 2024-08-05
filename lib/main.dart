@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weed_detection_app/Pages/home.dart';
 import 'package:weed_detection_app/Pages/onboard_screen_2.dart';
 import 'package:weed_detection_app/Pages/onboard_screen_3.dart';
+import 'package:weed_detection_app/Pages/onboard_screen_4.dart';
 import 'package:weed_detection_app/Pages/onboard_welcome_screen.dart';
 // import 'package:weed_detection_app/Pages/search_test.dart';
 
@@ -21,7 +22,8 @@ class WeedDetect extends StatelessWidget {
         '/':(context) => const HomePage(),
         '/help':(context) => const WelcomePage(),
         '/onboard_screen_2':(context) => const CaptureImageTip(),
-        '/onboard_screen_3':(context) => const GetWeedDetails()
+        '/onboard_screen_3':(context) => const GetWeedDetails(),
+        '/onboard_screen_4':(context) => const OnboardScreen4()
 
       },
     );
