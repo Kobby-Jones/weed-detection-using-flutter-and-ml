@@ -16,37 +16,38 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         // Row widget to arrange the children horizontally
-        title: isSearching? const SearchBar(): Row(
-          // Space out the children
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            // Title text
-            const Text("Home"),
-            // Search icon
-            // If the user clicks on the search icon, it should display a search bar for the user to search for what he or she want. The search icon is first displayed, disappear after it is being clicked and then shows the search bar
-                 
-                IconButton(
-                  onPressed: (){
-                    setState(
-                      () {
-                  isSearching = !isSearching;
-                });
-                }, 
-                icon: const Icon(Icons.search),color: const Color(0xFF187F5A)
-                ),
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.settings),
-                color: const Color(0xFF187F5A)),
-            // CircleAvatar widget for displaying the avatar
-            const CircleAvatar(
-              // Radius of the avatar
-              radius: 8.0,
-              // Avatar image
-              backgroundImage: AssetImage("images/kobby-pic.jpg"),
-            )
-          ],
-        ),
+        title: isSearching
+            ? const SearchBar()
+            : Row(
+                // Space out the children
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  // Title text
+                  const Text("Home"),
+                  // Search icon
+                  // If the user clicks on the search icon, it should display a search bar for the user to search for what he or she want. The search icon is first displayed, disappear after it is being clicked and then shows the search bar
+
+                  IconButton(
+                      onPressed: () {
+                        setState(() {
+                          isSearching = !isSearching;
+                        });
+                      },
+                      icon: const Icon(Icons.search),
+                      color: const Color(0xFF187F5A)),
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.settings),
+                      color: const Color(0xFF187F5A)),
+                  // CircleAvatar widget for displaying the avatar
+                  const CircleAvatar(
+                    // Radius of the avatar
+                    radius: 8.0,
+                    // Avatar image
+                    backgroundImage: AssetImage("images/kobby-pic.jpg"),
+                  )
+                ],
+              ),
       ),
       //  The Body Start here
       // Position all the components in the center of the page
@@ -111,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {},
                       style: const ButtonStyle(
                           backgroundColor:
-                              MaterialStatePropertyAll(Color(0xFF187F5A))),
+                              WidgetStatePropertyAll(Color(0xFF187F5A))),
                       child: const Text(
                         "Detect",
                         style: TextStyle(
@@ -127,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {},
                       style: const ButtonStyle(
                           backgroundColor:
-                              MaterialStatePropertyAll(Color(0xFF187F5A))),
+                              WidgetStatePropertyAll(Color(0xFF187F5A))),
                       child: const Text(
                         "Manage",
                         style: TextStyle(

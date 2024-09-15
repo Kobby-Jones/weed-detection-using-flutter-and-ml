@@ -12,7 +12,7 @@ class Buttons extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: const ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(Color(0xFF187F5A))),
+          backgroundColor: WidgetStatePropertyAll(Color(0xFF187F5A))),
       child: Text(
         "$buttonText",
         style: const TextStyle(
@@ -41,4 +41,3 @@ class SkipButton extends StatelessWidget {
     );
   }
 }
-
