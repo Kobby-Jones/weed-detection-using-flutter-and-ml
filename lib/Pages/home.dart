@@ -109,7 +109,9 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   // Detect Button
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/camera_page');
+                      },
                       style: const ButtonStyle(
                           backgroundColor:
                               WidgetStatePropertyAll(Color(0xFF187F5A))),
