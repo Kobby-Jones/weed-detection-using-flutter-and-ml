@@ -127,7 +127,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                   // Manage Button
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/results');
+                      },
                       style: const ButtonStyle(
                           backgroundColor:
                               WidgetStatePropertyAll(Color(0xFF187F5A))),
