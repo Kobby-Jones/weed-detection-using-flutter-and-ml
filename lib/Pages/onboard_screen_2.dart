@@ -23,7 +23,7 @@ class CaptureImageTip extends StatelessWidget {
                   const SizedBox(
                     height: 150.0,
                   ),
-                  // An image demonstrating how to use the app
+                  // An image demonstrating how to use the App
                   const Image(image: AssetImage("images/capture-weed.jpg")),
                   // Leave some vertical space before the tip message
                   const SizedBox(
