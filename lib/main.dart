@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 // import 'package:path/path.dart';
 import 'package:weed_detection_app/Pages/camera_screen.dart';
 import 'package:weed_detection_app/Pages/detection_results.dart';
@@ -8,6 +9,7 @@ import 'package:weed_detection_app/Pages/onboard_screen_2.dart';
 import 'package:weed_detection_app/Pages/onboard_screen_3.dart';
 import 'package:weed_detection_app/Pages/onboard_screen_4.dart';
 import 'package:weed_detection_app/Pages/onboard_welcome_screen.dart';
+import 'package:weed_detection_app/Pages/saved_results.dart';
 
 Future<void> main() async {
 // Ensure that plugin services are initialized before using them.
@@ -28,7 +30,8 @@ Future<void> main() async {
         '/onboard_screen_3': (context) => const GetWeedDetails(),
         '/onboard_screen_4': (context) => const OnboardScreen4(),
         '/camera_page' : (context) =>  TakePictureScreen(camera: firstCamera),
-        '/results' : (context) => const DetectResultsScreen()
+        '/results' : (context) => const DetectResultsScreen(),
+        '/saved_results' : (context) => SavedResultsScreen()
     }
   ));
 }

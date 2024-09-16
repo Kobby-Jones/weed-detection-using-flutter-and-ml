@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class DetectResultsScreen extends StatelessWidget {
   const DetectResultsScreen({super.key});
 
@@ -39,7 +38,9 @@ class DetectResultsScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/saved_results');
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
                     ),
@@ -105,7 +106,8 @@ class DetectResultsScreen extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
-                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 16),
                 ),
                 child: const Text('How to Manage'),
               ),
@@ -120,10 +122,13 @@ class DetectResultsScreen extends StatelessWidget {
                 child: GridView.count(
                   crossAxisCount: 4,
                   children: [
-                    relatedWeedCard('Bermuda', 'https://via.placeholder.com/100'),
+                    relatedWeedCard(
+                        'Bermuda', 'https://via.placeholder.com/100'),
                     relatedWeedCard('Spear', 'https://via.placeholder.com/100'),
-                    relatedWeedCard('Guinea', 'https://via.placeholder.com/100'),
-                    relatedWeedCard('Purple', 'https://via.placeholder.com/100'),
+                    relatedWeedCard(
+                        'Guinea', 'https://via.placeholder.com/100'),
+                    relatedWeedCard(
+                        'Purple', 'https://via.placeholder.com/100'),
                   ],
                 ),
               ),
