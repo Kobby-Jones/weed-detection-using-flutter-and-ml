@@ -36,7 +36,9 @@ class _HomePageState extends State<HomePage> {
                       icon: const Icon(Icons.search),
                       color: const Color(0xFF187F5A)),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/settings');
+                      },
                       icon: const Icon(Icons.settings),
                       color: const Color(0xFF187F5A)),
                   // CircleAvatar widget for displaying the avatar

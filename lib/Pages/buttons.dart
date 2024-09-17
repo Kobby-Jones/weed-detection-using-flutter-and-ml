@@ -41,3 +41,21 @@ class SkipButton extends StatelessWidget {
     );
   }
 }
+class DoneButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  const DoneButton({super.key, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onPressed,
+      child: const Text(
+        "Done",
+        style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 32, 79, 222)),
+      ),
+    );
+  }
+}
