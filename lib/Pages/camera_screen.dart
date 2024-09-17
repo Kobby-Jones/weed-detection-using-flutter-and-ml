@@ -103,7 +103,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 // A widget that displays the picture taken by the user.
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
-
+// Send the image to the display screen
   const DisplayPictureScreen({super.key, required this.imagePath});
 
   @override
