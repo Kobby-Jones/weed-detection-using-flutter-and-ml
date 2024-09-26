@@ -1,6 +1,5 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-// import 'package:path/path.dart';
 import 'package:weed_detection_app/Pages/camera_screen.dart';
 import 'package:weed_detection_app/Pages/detection_results.dart';
 import 'package:weed_detection_app/Pages/home.dart';
