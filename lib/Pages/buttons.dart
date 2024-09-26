@@ -40,8 +40,8 @@ class SkipButton extends StatelessWidget {
       ),
     );
   }
-}utton with will end the onboard screens
-// The Done b
+}
+// The Done button with will end the onboard screens
 class DoneButton extends StatelessWidget {
   final VoidCallback onPressed;
   const DoneButton({super.key, required this.onPressed});
