@@ -22,7 +22,7 @@ Future<void> main() async {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: const HomePage(),
+    home: const WelcomePage(),
     routes: {
         '/help': (context) => const WelcomePage(),
         '/onboard_screen_2': (context) => const CaptureImageTip(),
